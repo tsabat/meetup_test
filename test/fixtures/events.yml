@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  meetup_id: 1
+  scheduled: 2014-09-14 19:48:08
+
+two:
+  name: MyString
+  meetup_id: 1
+  scheduled: 2014-09-14 19:48:08

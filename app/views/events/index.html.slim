@@ -1,0 +1,14 @@
+table#events width="100%"
+  thead
+    tr
+      th Event Name
+      th Event Date
+      th RSVP
+      th Attendance
+  tbody
+    - @events.each do |event|
+      tr
+        td = event.name
+        td = event.scheduled
+        td = event.rsvp
+        td = event.status

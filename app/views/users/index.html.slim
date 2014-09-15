@@ -1,0 +1,5 @@
+ol
+  - @users.each do |user|
+    li
+      = link_to user_events_path(user), class: 'user', remote: true, "data-type" => :html do
+        | #{user.name} (#{pluralize(user.attended, 'event')} attended, #{pluralize(user.no_shows, 'no-show')})
