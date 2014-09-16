@@ -1,7 +1,7 @@
 class MeetupApi
   include HTTParty
   base_uri 'http://api.meetup.com/'
-  API_KEY = ''
+  API_KEY = '26301356611e3d5e70172e6bc5a05f'
 
   attr_accessor :options
 
@@ -9,18 +9,18 @@ class MeetupApi
     @options = { query: {key: API_KEY} }
   end
 
-  def events(group_id, status: 'past', desc: true, time: '1316121739488,1410816101633')
+  def events(group_id: nil, status: 'past', desc: true, time: '1316121739488,1410816101633')
     @options[:query].merge!(group_id: group_id, status: status, time: time, desc: desc)
 
     self.class.get("/2/events", @options)
   end
 
-  def members(group_id)
+  def members(group_id: nil)
     @options[:query].merge!(group_id: group_id)
     self.class.get("/2/members", @options)
   end
 
-  def attendance(urlname, event_id)
+  def attendance(urlname: nil, event_id: nil)
     self.class.get("/#{urlname}/events/#{event_id}/attendance", @options)
   end
 end
